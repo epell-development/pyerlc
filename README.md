@@ -74,7 +74,7 @@ Contributions are welcome! Submit a PR or open an issue on GitHub.
 * 📦 PyPI: [pyerlc on PyPI](https://pypi.org/project/pyerlc)
 * 🏠 Website: [epelldevelopment.xyz](https://epelldevelopment.xyz)
 * 📨 Contact: [epell1@epelldevelopment.xyz](mailto:epell1@epelldevelopment.xyz)
-* 🔗 GitHub: [github.com/epell-development/erlc\_py](https://github.com/epell-development/erlc_py)
+* 🔗 GitHub: [github.com/epell-development/erlc\_py](https://github.com/epell-development/pyerlc)
 
 ## License
 

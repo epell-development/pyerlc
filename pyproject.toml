@@ -19,4 +19,4 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://epelldevelopment.xyz"
-Repository = "https://github.com/epell-development/erlc_py"
+Repository = "https://github.com/epell-development/pyerlc"
