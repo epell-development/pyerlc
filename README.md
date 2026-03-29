@@ -24,7 +24,7 @@ It allows developers to interact with live server data, player locations, staff 
 ---
 
 ## 📦 Installation
-
+** Ensure pyerlc v1 is removed **
 ```bash
 pip install pyerlc-v2
 ```
@@ -256,15 +256,6 @@ units = client.get_players_by_postal("218")
 print(units)
 ```
 
-### 🚓 Dispatch-style monitoring
-
-```python
-data = client.get_all_data()
-
-for p in data["Players"]:
-    print(p["player"], p["formatted_location"])
-```
-
 ---
 
 ## 📦 Project Info
@@ -283,5 +274,3 @@ MIT License
 ---
 
 ⚒️ Built with ❤️ by epell Development🦘
-
----

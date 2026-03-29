@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: pyerlc-v2
-Version: 2.0.3
+Version: 2.1.0
 Summary: A Python wrapper for the ERLC PRC API
 Author: epell Development
 Author-email: epell Development <epell1@epelldevelopment.xyz>
@@ -42,7 +42,7 @@ It allows developers to interact with live server data, player locations, staff 
 ---
 
 ## 📦 Installation
-
+** Ensure pyerlc v1 is removed **
 ```bash
 pip install pyerlc-v2
 ```
@@ -274,15 +274,6 @@ units = client.get_players_by_postal("218")
 print(units)
 ```
 
-### 🚓 Dispatch-style monitoring
-
-```python
-data = client.get_all_data()
-
-for p in data["Players"]:
-    print(p["player"], p["formatted_location"])
-```
-
 ---
 
 ## 📦 Project Info
@@ -301,5 +292,3 @@ MIT License
 ---
 
 ⚒️ Built with ❤️ by epell Development🦘
-
----
