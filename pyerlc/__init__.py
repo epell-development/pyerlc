@@ -1,13 +1,7 @@
-"""
-PRC API Wrapper
-===============
-
-A Python wrapper for the Police Roleplay Community API.
-"""
-
-from .client import PRCClient
+from .clientv1 import PRCClient
+from .clientv2 import PRCClientV2
 from .exceptions import PRCError
 from .models import PRCResponse, ErrorCode
 
-__version__ = "1.0.3"
+__version__ = "2.0.0"
 __all__ = ["PRCClient", "PRCError", "PRCResponse", "ErrorCode"]
