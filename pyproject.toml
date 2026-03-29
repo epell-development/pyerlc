@@ -3,8 +3,8 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pyerlc"
-version = "1.1.0"
+name = "pyerlc_v2"
+version = "2.0.2"
 description = "A Python wrapper for the ERLC PRC API"
 authors = [
     { name = "epell Development", email = "epell1@epelldevelopment.xyz" }

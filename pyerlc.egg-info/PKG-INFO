@@ -1,20 +1,18 @@
-Metadata-Version: 2.4
+Metadata-Version: 2.1
 Name: pyerlc
-Version: 1.1.0
+Version: 2.0.0
 Summary: A Python wrapper for the ERLC PRC API
 Author: epell Development
 Author-email: epell Development <epell1@epelldevelopment.xyz>
 License: MIT
 Project-URL: Homepage, https://epelldevelopment.xyz
-Project-URL: Repository, https://github.com/epell-development/erlc_py
+Project-URL: Repository, https://github.com/epell-development/pyerlc
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
 Requires-Python: >=3.12
 Description-Content-Type: text/markdown
 License-File: LICENSE
-Requires-Dist: requests
-Requires-Dist: colorama
-Dynamic: author
-Dynamic: license-file
-Dynamic: requires-python
 
 # pyerlc
 
@@ -92,7 +90,7 @@ Contributions are welcome! Submit a PR or open an issue on GitHub.
 * 📦 PyPI: [pyerlc on PyPI](https://pypi.org/project/pyerlc)
 * 🏠 Website: [epelldevelopment.xyz](https://epelldevelopment.xyz)
 * 📨 Contact: [epell1@epelldevelopment.xyz](mailto:epell1@epelldevelopment.xyz)
-* 🔗 GitHub: [github.com/epell-development/erlc\_py](https://github.com/epell-development/erlc_py)
+* 🔗 GitHub: [github.com/epell-development/erlc\_py](https://github.com/epell-development/pyerlc)
 
 ## License
 
@@ -100,5 +98,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-> Built and maintained with 💙 by epell Development
-> Product of Australia 🇦🇺
+> Built and maintained with 💙 by epell Development, Product of Australia🦘

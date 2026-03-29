@@ -3,7 +3,8 @@ README.md
 pyproject.toml
 setup.py
 pyerlc/__init__.py
-pyerlc/client.py
+pyerlc/clientv1.py
+pyerlc/clientv2.py
 pyerlc/exceptions.py
 pyerlc/models.py
 pyerlc/utils.py
