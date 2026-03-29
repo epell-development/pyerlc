@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="pyerlc_v2",
-    version="2.0.2",
+    version="2.0.3",
     description="Python wrapper for the ERLC PRC API",
     author="epell Development",
     author_email="epell1@epelldevelopment.xyz",

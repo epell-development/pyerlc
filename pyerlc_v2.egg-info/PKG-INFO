@@ -1,89 +1,88 @@
-Metadata-Version: 2.1
+Metadata-Version: 2.4
 Name: pyerlc-v2
-Version: 2.0.2
+Version: 2.0.3
 Summary: A Python wrapper for the ERLC PRC API
 Author: epell Development
 Author-email: epell Development <epell1@epelldevelopment.xyz>
 License: MIT
 Project-URL: Homepage, https://epelldevelopment.xyz
 Project-URL: Repository, https://github.com/epell-development/pyerlc
-Classifier: Programming Language :: Python :: 3
-Classifier: License :: OSI Approved :: MIT License
-Classifier: Operating System :: OS Independent
 Requires-Python: >=3.12
 Description-Content-Type: text/markdown
 License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: colorama
+Dynamic: author
+Dynamic: license-file
+Dynamic: requires-python
 
 # pyerlc-v2
 
-**This is version 2 of pyerlc, if you are looking for Version 1, you can find it [here](https://pypi.org/project/pyerlc)**
-**Version 1 is deprecated and is no longer being worked on**
+**pyerlc-v2** is the second major version of `pyerlc`.
+If you are looking for Version 1, it is deprecated and no longer maintained.
 
-**pyerlc** is a lightweight Python SDK for the  
-**Emergency Response: Liberty County (ER:LC) PRC API v2**.
+`pyerlc` is a lightweight Python SDK for the **Emergency Response: Liberty County (ER:LC) PRC API v2**.
 
-It allows developers to interact with live server data, player locations, staff information, logs, vehicles, and execute in-game commands through a simple Python interface.
-
----
-
-# 🚀 Features
-
-- 📊 Live server status
-- 👥 Player tracking with **real-time location data**
-- 📍 Postal + street-level positioning system
-- 👮 Staff (Admins / Mods / Helpers)
-- 🔫 Kill, join, and command logs
-- 🚓 Vehicle tracking (plates, colours, ownership)
-- 📞 Emergency call monitoring
-- 🧠 Run server commands remotely
-- ⚡ Single-request full server data fetch (v2 feature)
+It allows developers to interact with live server data, player locations, staff information, logs, vehicles, and execute in-game commands through a simple and modern Python interface.
 
 ---
 
-# 📦 Installation
+## 🚀 Features
+
+* 📊 Live server status monitoring
+* 👥 Real-time player tracking with location data
+* 📍 Postal + street-level positioning system
+* 👮 Staff data (Admins / Mods / Helpers)
+* 🔫 Kill, join, command, and moderation logs
+* 🚓 Vehicle tracking (plates, colours, ownership)
+* 📞 Emergency call monitoring
+* 🧠 Remote in-game command execution
+* ⚡ Single-request full server data fetch (v2 feature)
+
+---
+
+## 📦 Installation
 
 ```bash
 pip install pyerlc-v2
-````
+```
 
 ---
 
-# ⚠️ Requirements
+## ⚠️ Requirements
 
 * Python 3.12+
 * Valid PRC Server Key from ER:LC server settings
 
 ---
 
-# 🧑‍💻 Quick Start
+## 🧑‍💻 Quick Start
 
 ```python
-from pyerlc-v2 import PRCClientV2
+from pyerlc_v2 import PRCClientV2
 
 client = PRCClientV2(server_key="YOUR_SERVER_KEY")
 
-# Get server status
+# Server status
 status = client.get_server_status()
 print(status)
 
-# Get all players (with location data)
+# Get all players with location data
 players = client.get_players()
 print(players)
 
-# Run a command in-game
+# Run an in-game command
 response = client.run_command(":h Hello from pyerlc v2!")
 print(response)
 ```
 
 ---
 
-# 📍 Player Location System (v2)
+## 📍 Player Location System (v2)
 
-Each player now includes **live world positioning data**:
+Each player now includes live world positioning data:
 
-### Example Output
-
-```python
+```json
 {
     "player": "JohnDoe:123",
     "team": "Police",
@@ -102,27 +101,24 @@ Each player now includes **live world positioning data**:
 
 ---
 
-# 🗺️ Map System
+## 🗺️ Map System
 
 PRC v2 uses an X/Z coordinate system:
 
 * **X/Z** → world position
-* **Postal Code** → region identifier
+* **Postal Code** → regional identifier
 * **Street Name** → road-level detail
 
 ### Official PRC Maps
 
-* 🗺️ Blank Map
-  [https://api.policeroleplay.community/maps/fall_blank.png](https://api.policeroleplay.community/maps/fall_blank.png)
-
-* 📮 Postal Map
-  [https://api.policeroleplay.community/maps/fall_postals.png](https://api.policeroleplay.community/maps/fall_postals.png)
+* 🗺️ Blank Map: [https://api.policeroleplay.community/maps/fall_blank.png](https://api.policeroleplay.community/maps/fall_blank.png)
+* 🗺️ Postal Map: [https://api.policeroleplay.community/maps/fall_postals.png](https://api.policeroleplay.community/maps/fall_postals.png)
 
 ---
 
-# 📡 API Methods
+## 📡 API Methods
 
-## 🏛️ Server Data
+### 🏛️ Server Data
 
 ```python
 client.get_server_status()
@@ -132,9 +128,7 @@ client.get_queue()
 client.get_all_data()
 ```
 
----
-
-## 📊 Logs
+### 📊 Logs
 
 ```python
 client.get_join_logs()
@@ -144,17 +138,15 @@ client.get_mod_calls()
 client.get_emergency_calls()
 ```
 
----
-
-## 🚗 Vehicles
+### 🚗 Vehicles
 
 ```python
 client.get_vehicles()
 ```
 
-### Vehicle Example
+**Example:**
 
-```python
+```json
 {
     "name": "Redline Fire Engine",
     "owner": "Shawnyg",
@@ -173,11 +165,11 @@ client.get_vehicles()
 client.run_command(":h Hello world!")
 ```
 
-### Example response
+**Response example:**
 
-```python
+```json
 {
-    "success": True,
+    "success": true,
     "status_code": 200,
     "data": {
         "message": "Success"
@@ -187,9 +179,9 @@ client.run_command(":h Hello world!")
 
 ---
 
-# ⚡ Full Server Fetch (v2 Feature)
+## ⚡ Full Server Fetch (v2 Feature)
 
-Get EVERYTHING in one request:
+Fetch everything in a single request:
 
 ```python
 data = client.get_all_data()
@@ -206,9 +198,9 @@ Includes:
 
 ---
 
-# 👮 Emergency Calls
+## 📞 Emergency Calls
 
-```python
+```json
 {
     "team": "Police",
     "caller": 168691872,
@@ -223,9 +215,9 @@ Includes:
 
 ---
 
-# 👮 Staff Structure
+## 👮 Staff Structure
 
-```python
+```json
 {
     "Admins": {
         "54249787": "PlayerName"
@@ -237,15 +229,15 @@ Includes:
 
 ---
 
-# 🧠 Error Handling
+## 🧠 Error Handling
 
 All responses follow this structure:
 
-```python
+```json
 {
-    "success": True,
+    "success": true,
     "status_code": 200,
-    "data": {...},
+    "data": {},
     "error_message": "Optional error message",
     "error_code": 0
 }
@@ -253,7 +245,7 @@ All responses follow this structure:
 
 ---
 
-# ❌ Common Errors
+## ❌ Common Errors
 
 | Code | Meaning            |
 | ---- | ------------------ |
@@ -266,27 +258,23 @@ All responses follow this structure:
 
 ---
 
-# 🧪 Example Use Cases
+## 🧪 Example Use Cases
 
-## 📍 Track a player by name
+### 📍 Track a player by name
 
 ```python
 player = client.get_player_by_name("JohnDoe")
 print(player["formatted_location"])
 ```
 
----
-
-## 📮 Find players in a postal
+### 📮 Find players in a postal
 
 ```python
 units = client.get_players_by_postal("218")
 print(units)
 ```
 
----
-
-## 🚓 Dispatch-style monitoring
+### 🚓 Dispatch-style monitoring
 
 ```python
 data = client.get_all_data()
@@ -297,21 +285,21 @@ for p in data["Players"]:
 
 ---
 
-# 📦 Project Info
+## 📦 Project Info
 
-* 📦 PyPI: [https://pypi.org/project/pyerlc](https://pypi.org/project/pyerlc-v2)
+* 📦 PyPI: [https://pypi.org/project/pyerlc](https://pypi.org/project/pyerlc)
 * 🏠 Website: [https://epelldevelopment.xyz](https://epelldevelopment.xyz)
-* 📧 Contact: [epell1@epelldevelopment.xyz](mailto:epell1@epelldevelopment.xyz)
+* 📧 Email: [epell1@epelldevelopment.xyz](mailto:epell1@epelldevelopment.xyz)
 * 💻 GitHub: [https://github.com/epell-development/pyerlc](https://github.com/epell-development/pyerlc)
 
 ---
 
-# 📜 License
+## 📜 License
 
 MIT License
 
 ---
 
-# 🚓 Built with ❤️ by epell Development 🇦🇺
+⚒️ Built with ❤️ by epell Development🦘
 
-```
+---
