@@ -41,7 +41,7 @@ pip install pyerlc-v2
 ## 🧑‍💻 Quick Start
 
 ```python
-from pyerlc_v2 import PRCClientV2
+from pyerlc import PRCClientV2
 
 client = PRCClientV2(server_key="YOUR_SERVER_KEY")
 

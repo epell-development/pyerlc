@@ -2,11 +2,11 @@ import requests
 from typing import Optional, Dict, Any, List
 
 class PRCClientV2:
-    BASE_URL = "https://api.policeroleplay.community/v2"
+    BASE_URL = "https://api.erlc.gg/v2"
 
     MAPS = {
-        "fall_blank": "https://api.policeroleplay.community/maps/fall_blank.png",
-        "fall_postals": "https://api.policeroleplay.community/maps/fall_postals.png",
+        "fall_blank": "https://api.erlc.gg/maps/fall_blank.png",
+        "fall_postals": "https://api.erlc.gg/maps/fall_postals.png",
     }
 
     def __init__(self, server_key: str):

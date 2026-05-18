@@ -7,7 +7,7 @@ class PRCClient:
     A client to interact with the Police Roleplay Community (PRC) API.
     """
 
-    BASE_URL = "https://api.policeroleplay.community/v1"
+    BASE_URL = "https://api.erlc.gg/v1"
 
     def __init__(self, server_key: str, global_api_key: Optional[str] = None):
         self.server_key = server_key
